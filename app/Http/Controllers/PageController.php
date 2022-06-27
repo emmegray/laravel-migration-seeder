@@ -1,15 +1,14 @@
 <?php
 
-use Faker\Guesser\Name;
-
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Train;
 
 class PageController extends Controller
 {
     function index()
     {
-        return view('home');
+        $trains = Train::all();
+        return view('home', compact('trains'));
     }
 }
